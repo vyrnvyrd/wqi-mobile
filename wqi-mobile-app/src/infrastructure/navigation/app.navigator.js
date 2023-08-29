@@ -1,18 +1,12 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { LandingPageScreen } from "../../features/main/screens/landingpage.screen";
+import { SearchPageScreen } from "../../features/water_quality/screens/searchpage.screen";
 
 const Stack = createStackNavigator();
 
 function MyTabs() {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false
-      }}>
-      <Stack.Screen name="Landing" component={LandingPageScreen} />
-    </Stack.Navigator>
-  );
+  return (<></>);
 }
 
 export const AppNavigator = () => <MyTabs />;

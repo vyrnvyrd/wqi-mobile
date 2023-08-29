@@ -14,7 +14,9 @@ export const LandingPageScreen = ({ navigation }) => {
       />
       <Title>WQI</Title>
       <SubTitle>Know your water quality</SubTitle>
-      <NextButton>Mulai</NextButton>
+      <NextButton
+        onPress={() => navigation.navigate('Search')}
+      >Mulai</NextButton>
     </MainContainer>
   )
 }

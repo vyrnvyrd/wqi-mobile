@@ -1,11 +1,11 @@
 import React from "react";
-import { AppNavigator } from "./app.navigator";
 import { NavigationContainer } from "@react-navigation/native";
+import { LandingNavigator } from "./landing.navigator";
 
 export const Navigation = () => {
   return (
     <NavigationContainer>
-      <AppNavigator />
+      <LandingNavigator />
     </NavigationContainer>
   );
 };
