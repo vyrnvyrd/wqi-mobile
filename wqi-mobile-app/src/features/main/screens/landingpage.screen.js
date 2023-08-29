@@ -1,9 +1,20 @@
-import { MainContainer, Title } from "../components/landingpage.styles";
+import {
+  MainContainer,
+  Title,
+  ImgLanding,
+  SubTitle,
+  NextButton
+} from "../components/landingpage.styles";
 
 export const LandingPageScreen = ({ navigation }) => {
   return (
     <MainContainer>
-      <Title>Halo</Title>
+      <ImgLanding
+        source={require('../../../../assets/splash.png')}
+      />
+      <Title>WQI</Title>
+      <SubTitle>Know your water quality</SubTitle>
+      <NextButton>Mulai</NextButton>
     </MainContainer>
   )
 }
