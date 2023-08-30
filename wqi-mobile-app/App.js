@@ -5,6 +5,7 @@ import { Navigation } from "./src/infrastructure/navigation";
 import 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
 import { store } from './src/redux/store';
+import Toast from 'react-native-toast-message';
 import {
   useFonts as useNoto,
   NotoSans_400Regular,
@@ -27,6 +28,7 @@ export default function App() {
         <Navigation />
       </ThemeProvider>
       <StatusBar style="auto" />
+      <Toast />
     </Provider>
   );
 }
