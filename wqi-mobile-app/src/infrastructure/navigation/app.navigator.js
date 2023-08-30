@@ -1,12 +1,34 @@
 import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
-import { LandingPageScreen } from "../../features/main/screens/landingpage.screen";
-import { SearchPageScreen } from "../../features/water_quality/screens/searchpage.screen";
+import { Ionicons } from "@expo/vector-icons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { WaterQualitysNavigator } from './waterquality.navigator'
 
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const TAB_ICON = {
+  Searchs: "md-restaurant",
+};
+
+const screenOptions = ({ route }) => {
+  const iconName = TAB_ICON[route.name];
+  return {
+    tabBarActiveTintColor: 'black',
+    tabBarInactiveTintColor: 'black',
+    tabBarIcon: ({ size, color }) => (
+      <Ionicons name={iconName} size={size} color={color} />
+    ),
+  };
+};
 
 function MyTabs() {
-  return (<></>);
+  return (
+    <Tab.Navigator
+      screenOptions={screenOptions}
+    >
+      <Tab.Screen name="Find" component={WaterQualitysNavigator} />
+    </Tab.Navigator>
+  )
+    ;
 }
 
 export const AppNavigator = () => <MyTabs />;
