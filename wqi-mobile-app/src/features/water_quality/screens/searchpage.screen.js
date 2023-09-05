@@ -20,6 +20,7 @@ export const SearchPageScreen = ({ navigation }) => {
   const [optionsKecamatan, setOptionsKecamatan] = useState([]);
   const [optionKelurahan, setOptionsKelurahan] = useState([]);
   const [optionSumur, setOptionsSumur] = useState([]);
+  const refKecamatan = useRef({});
   const refKelurahan = useRef({});
   const refSumur = useRef({});
   const [form, setForm] = useState(
@@ -71,6 +72,17 @@ export const SearchPageScreen = ({ navigation }) => {
       });
       return
     }
+
+    setForm(({
+      id_kota: '3273',
+      id_kecamatan: '',
+      id_kelurahan: '',
+      id_sumur: '',
+    }))
+    refKecamatan.current.reset()
+    refKelurahan.current.reset()
+    refSumur.current.reset()
+    navigation.navigate('Find', { screen: 'Detail' });
   }
 
   useEffect(() => {
@@ -104,6 +116,7 @@ export const SearchPageScreen = ({ navigation }) => {
           <ContainerField>
             <LabelStyle>Kecamatan</LabelStyle>
             <SelectDropdown
+              ref={refKecamatan}
               data={optionsKecamatan}
               buttonStyle={{
                 width: '100%'
