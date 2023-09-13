@@ -2,7 +2,8 @@ export const fonts = {
   body: "NotoSans_400Regular",
   heading: "NotoSans_400Regular",
   monospace: "NotoSans_400Regular",
-  body_bold: "NotoSans_700Bold"
+  body_bold: "NotoSans_700Bold",
+  regular_italic: "NotoSans_400Regular_Italic"
 };
 
 export const fontWeights = {

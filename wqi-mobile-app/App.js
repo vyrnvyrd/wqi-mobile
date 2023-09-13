@@ -9,13 +9,15 @@ import Toast from 'react-native-toast-message';
 import {
   useFonts as useNoto,
   NotoSans_400Regular,
-  NotoSans_700Bold
+  NotoSans_700Bold,
+  NotoSans_400Regular_Italic
 } from "@expo-google-fonts/noto-sans";
 
 export default function App() {
   const [notoLoaeded] = useNoto({
     NotoSans_400Regular,
     NotoSans_700Bold,
+    NotoSans_400Regular_Italic
   });
 
   if (!notoLoaeded) {

@@ -1,5 +1,7 @@
 import SelectDropdown from 'react-native-select-dropdown'
+import Toast from 'react-native-toast-message';
 import { DroidSafeArea } from "../../../utils/global"
+import { useEffect, useRef, useState } from 'react';
 import {
   MainContainer,
   ContainerSearch,
@@ -10,8 +12,6 @@ import {
   SelectButton,
   ContainerSelectButton
 } from "../components/searchpage.styles"
-import { useEffect, useRef, useState } from 'react';
-import Toast from 'react-native-toast-message';
 
 
 const SafeArea = DroidSafeArea;
@@ -72,6 +72,10 @@ export const SearchPageScreen = ({ navigation }) => {
       });
       return
     }
+    refKecamatan.current.reset()
+    refKelurahan.current.reset()
+    refSumur.current.reset()
+    navigation.navigate('Detail', { id: form.id_sumur });
 
     setForm(({
       id_kota: '3273',
@@ -79,10 +83,6 @@ export const SearchPageScreen = ({ navigation }) => {
       id_kelurahan: '',
       id_sumur: '',
     }))
-    refKecamatan.current.reset()
-    refKelurahan.current.reset()
-    refSumur.current.reset()
-    navigation.navigate('Find', { screen: 'Detail' });
   }
 
   useEffect(() => {

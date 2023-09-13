@@ -5,8 +5,7 @@ import {
   SubTitle,
   NextButton
 } from "../components/landingpage.styles";
-import { useSelector, useDispatch } from 'react-redux';
-import { continueScreen } from '../../../redux/actions/continueDataAction';
+import { useDispatch } from 'react-redux';
 
 export const LandingPageScreen = ({ navigation }) => {
   const dispatch = useDispatch();

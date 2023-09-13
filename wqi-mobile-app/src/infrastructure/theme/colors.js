@@ -9,6 +9,14 @@ export const colors = {
     primary: "#CCDCFE",
   },
   color: {
-    white: "#FFFFFF"
+    white: "#FFFFFF",
+    black: "#000000",
+    grey: "#d3d3d3"
+  },
+  class: {
+    one: "#B7EB8F",
+    two: "#ADC6FF",
+    three: "#FFE89E",
+    four: "#FFA39E"
   }
 };
