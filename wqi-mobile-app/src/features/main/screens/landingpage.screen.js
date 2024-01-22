@@ -19,7 +19,7 @@ export const LandingPageScreen = ({ navigation }) => {
       <SubTitle>Know your water quality</SubTitle>
       <NextButton
         onPress={() => { dispatch({ type: "CONTINUE_SCREEN", payload: true }) }}
-      >Mulai</NextButton>
+      >Start</NextButton>
     </MainContainer>
   )
 }

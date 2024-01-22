@@ -27,13 +27,13 @@ export const DetailPageScreen = ({ navigation }) => {
   const getWaterQualityText = () => {
     switch (dataDetail.class_data) {
       case 0:
-        return <Title style={{ color: theme.colors.class.one, marginTop: 10 }}>Bagus</Title>
+        return <Title style={{ color: theme.colors.class.one, marginTop: 10 }}>Potable</Title>
       case 1:
-        return <Title style={{ color: theme.colors.class.two, marginTop: 10 }}>Tercemar Ringan </Title>
+        return <Title style={{ color: theme.colors.class.two, marginTop: 10 }}>Lightly Polluted </Title>
       case 2:
-        return <Title style={{ color: theme.colors.class.three, marginTop: 10 }}>Tercemar Sedang</Title>
+        return <Title style={{ color: theme.colors.class.three, marginTop: 10 }}>Moderately Polluted</Title>
       case 3:
-        return <Title style={{ color: theme.colors.class.four, marginTop: 10 }}>Tercemar Berat</Title>
+        return <Title style={{ color: theme.colors.class.four, marginTop: 10 }}>Heavily Polluted</Title>
     }
   }
 
@@ -53,7 +53,7 @@ export const DetailPageScreen = ({ navigation }) => {
   const getDescriptionIndex = () => {
     switch (dataDetail.class_data) {
       case 0:
-        return 'Kelas I (Bagus), air yang peruntukannya dapat digunakan untuk air baku air minum, dan atau peruntukan lain yang mempersyaratkan mutu air yang sama dengan kegunaan tersebut.'
+        return 'Class I (Potable), water which is intended to be used as raw drinking water, and/or other uses which require the same water quality as that use.'
       case 1:
         return 'Kelas II (Tercemar Ringan), air yang peruntukannya dapat digunakan untuk sarana/prasarana rekreasi air, pembudidayaan ikan air tawar, peternakan, air untuk mengairi pertanaman, dan atau peruntukan lain yang mempersyaratkan mutu air yang sama dengan kegunaan tersebut.'
       case 2:
@@ -111,7 +111,7 @@ export const DetailPageScreen = ({ navigation }) => {
       <View style={{ padding: 20 }}>
         <IndexContainer>
           <BoxIndexContainer>
-            <Title style={{ color: theme.colors.color.white }}>Kualitas Air</Title>
+            <Title style={{ color: theme.colors.color.white }}>Water Quality</Title>
             <Image
               style={{ marginTop: 10 }}
               source={require('../../../../assets/water-quality-icon.png')}></Image>
@@ -120,7 +120,7 @@ export const DetailPageScreen = ({ navigation }) => {
             }
           </BoxIndexContainer>
           <BoxIndexContainer>
-            <Title style={{ color: theme.colors.color.white }}>Kelas</Title>
+            <Title style={{ color: theme.colors.color.white }}>Class</Title>
             <Image
               style={{ marginTop: 10 }}
               source={require('../../../../assets/class-icon.png')}></Image>
@@ -132,7 +132,7 @@ export const DetailPageScreen = ({ navigation }) => {
 
         <InformationContainer>
           <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Title style={{ color: theme.colors.color.black }}>Informasi</Title><Image
+            <Title style={{ color: theme.colors.color.black }}>Information</Title><Image
               source={require('../../../../assets/info-icon.png')}></Image>
           </View>
           <BodyText style={{ color: theme.colors.color.black, marginTop: 10 }}>
@@ -144,15 +144,15 @@ export const DetailPageScreen = ({ navigation }) => {
       </View>
 
       <DescripContainer>
-        <Title style={{ color: theme.colors.bg.secondary }}>Info Sumur</Title>
-        <BodyText style={{ color: theme.colors.color.black, fontWeight: 'bold', fontFamily: theme.fonts.body_bold, marginTop: 10 }}>Nama Sumur</BodyText>
+        <Title style={{ color: theme.colors.bg.secondary }}>Water Info</Title>
+        <BodyText style={{ color: theme.colors.color.black, fontWeight: 'bold', fontFamily: theme.fonts.body_bold, marginTop: 10 }}>Name</BodyText>
         <TextInput
           placeholder="Nama Sumur"
           value={dataDetail?.nama_sumur}
           style={{ backgroundColor: theme.colors.color.grey, height: 30, paddingTop: 5, paddingBottom: 5 }}
           disabled
         />
-        <BodyText style={{ color: theme.colors.color.black, fontWeight: 'bold', fontFamily: theme.fonts.body_bold, marginTop: 10 }}>Alamat Sumur</BodyText>
+        <BodyText style={{ color: theme.colors.color.black, fontWeight: 'bold', fontFamily: theme.fonts.body_bold, marginTop: 10 }}>Address</BodyText>
         <TextInput
           placeholder="Alamat Sumur"
           multiline={true}
@@ -184,7 +184,7 @@ export const DetailPageScreen = ({ navigation }) => {
           <View style={{ height: 0 }} />
         </View>
 
-        <Title style={{ color: theme.colors.bg.secondary, marginTop: 20 }}>Analisis Air</Title>
+        <Title style={{ color: theme.colors.bg.secondary, marginTop: 20 }}>Water Analysis</Title>
         <View style={{
           display: 'flex',
           flexDirection: 'row',
@@ -197,7 +197,7 @@ export const DetailPageScreen = ({ navigation }) => {
         }}>
           <View style={{ width: 263, backgroundColor: theme.colors.bg.primary, paddingHorizontal: 10 }}>
             <View style={{ marginTop: 'auto', marginBottom: 'auto' }}>
-              <Title style={{ color: theme.colors.color.white }}>1. Zat Organik
+              <Title style={{ color: theme.colors.color.white }}>1. Organic
                 <Title style={{
                   fontStyle: 'italic',
                   color: theme.colors.color.white,
@@ -226,7 +226,7 @@ export const DetailPageScreen = ({ navigation }) => {
         }}>
           <View style={{ width: 263, backgroundColor: theme.colors.bg.primary, paddingHorizontal: 10 }}>
             <View style={{ marginTop: 'auto', marginBottom: 'auto' }}>
-              <Title style={{ color: theme.colors.color.white }}>2. Zat Padat Terlarut<Title style={{
+              <Title style={{ color: theme.colors.color.white }}>2. TDS<Title style={{
                 fontStyle: 'italic',
                 color: theme.colors.color.white,
                 fontFamily: theme.fonts.regular_italic
@@ -254,7 +254,7 @@ export const DetailPageScreen = ({ navigation }) => {
         }}>
           <View style={{ width: 263, backgroundColor: theme.colors.bg.primary, paddingHorizontal: 10 }}>
             <View style={{ marginTop: 'auto', marginBottom: 'auto' }}>
-              <Title style={{ color: theme.colors.color.white }}>3. Mangan<Title style={{
+              <Title style={{ color: theme.colors.color.white }}>3. Manganese<Title style={{
                 fontStyle: 'italic',
                 color: theme.colors.color.white,
                 fontFamily: theme.fonts.regular_italic
@@ -282,7 +282,7 @@ export const DetailPageScreen = ({ navigation }) => {
         }}>
           <View style={{ width: 263, backgroundColor: theme.colors.bg.primary, paddingHorizontal: 10 }}>
             <View style={{ marginTop: 'auto', marginBottom: 'auto' }}>
-              <Title style={{ color: theme.colors.color.white }}>4. Klorida<Title style={{
+              <Title style={{ color: theme.colors.color.white }}>4. Chloride<Title style={{
                 fontStyle: 'italic',
                 color: theme.colors.color.white,
                 fontFamily: theme.fonts.regular_italic
@@ -310,7 +310,7 @@ export const DetailPageScreen = ({ navigation }) => {
         }}>
           <View style={{ width: 263, backgroundColor: theme.colors.bg.primary, paddingHorizontal: 10 }}>
             <View style={{ marginTop: 'auto', marginBottom: 'auto' }}>
-              <Title style={{ color: theme.colors.color.white }}>5. Kekeruhan<Title style={{
+              <Title style={{ color: theme.colors.color.white }}>5. Turbidity<Title style={{
                 fontStyle: 'italic',
                 color: theme.colors.color.white,
                 fontFamily: theme.fonts.regular_italic
@@ -338,7 +338,7 @@ export const DetailPageScreen = ({ navigation }) => {
         }}>
           <View style={{ width: 263, backgroundColor: theme.colors.bg.primary, paddingHorizontal: 10 }}>
             <View style={{ marginTop: 'auto', marginBottom: 'auto' }}>
-              <Title style={{ color: theme.colors.color.white }}>6. Fluorida<Title style={{
+              <Title style={{ color: theme.colors.color.white }}>6. Fluoride<Title style={{
                 fontStyle: 'italic',
                 color: theme.colors.color.white,
                 fontFamily: theme.fonts.regular_italic
@@ -394,7 +394,7 @@ export const DetailPageScreen = ({ navigation }) => {
         }}>
           <View style={{ width: 263, backgroundColor: theme.colors.bg.primary, paddingHorizontal: 10 }}>
             <View style={{ marginTop: 'auto', marginBottom: 'auto' }}>
-              <Title style={{ color: theme.colors.color.white }}>8. Kesadahan<Title style={{
+              <Title style={{ color: theme.colors.color.white }}>8. Total hardness<Title style={{
                 fontStyle: 'italic',
                 color: theme.colors.color.white,
                 fontFamily: theme.fonts.regular_italic
@@ -422,7 +422,7 @@ export const DetailPageScreen = ({ navigation }) => {
         }}>
           <View style={{ width: 263, backgroundColor: theme.colors.bg.primary, paddingHorizontal: 10 }}>
             <View style={{ marginTop: 'auto', marginBottom: 'auto' }}>
-              <Title style={{ color: theme.colors.color.white }}>9. Sulfat<Title style={{
+              <Title style={{ color: theme.colors.color.white }}>9. Sulfate<Title style={{
                 fontStyle: 'italic',
                 color: theme.colors.color.white,
                 fontFamily: theme.fonts.regular_italic
@@ -450,7 +450,7 @@ export const DetailPageScreen = ({ navigation }) => {
         }}>
           <View style={{ width: 263, backgroundColor: theme.colors.bg.primary, paddingHorizontal: 10 }}>
             <View style={{ marginTop: 'auto', marginBottom: 'auto' }}>
-              <Title style={{ color: theme.colors.color.white }}>10. Suhu<Title style={{
+              <Title style={{ color: theme.colors.color.white }}>10. Temperature<Title style={{
                 fontStyle: 'italic',
                 color: theme.colors.color.white,
                 fontFamily: theme.fonts.regular_italic

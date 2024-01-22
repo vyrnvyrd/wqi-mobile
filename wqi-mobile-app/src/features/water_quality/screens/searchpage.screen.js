@@ -34,7 +34,7 @@ export const SearchPageScreen = ({ navigation }) => {
   const optionsKota = [
     {
       value: '3273',
-      label: 'KOTA BANDUNG'
+      label: 'BANDUNG'
     }
   ]
 
@@ -92,11 +92,11 @@ export const SearchPageScreen = ({ navigation }) => {
   return (
     <SafeArea>
       <MainContainer>
-        <TitlePage style={{ color: 'black' }}>Pencarian Sumur</TitlePage>
+        <TitlePage style={{ color: 'black' }}>Search Water Sources</TitlePage>
         <ContainerTitlePage />
         <ContainerSearch>
           <ContainerField>
-            <LabelStyle>Kota/Kabupaten</LabelStyle>
+            <LabelStyle>City</LabelStyle>
             <SelectDropdown
               data={optionsKota}
               buttonStyle={{
@@ -114,14 +114,14 @@ export const SearchPageScreen = ({ navigation }) => {
             />
           </ContainerField>
           <ContainerField>
-            <LabelStyle>Kecamatan</LabelStyle>
+            <LabelStyle>Subdistrict</LabelStyle>
             <SelectDropdown
               ref={refKecamatan}
               data={optionsKecamatan}
               buttonStyle={{
                 width: '100%'
               }}
-              defaultButtonText='Pilih Kecamatan'
+              defaultButtonText='Select Subdistrict'
               onSelect={(selectedItem) => {
                 refKelurahan.current.reset()
                 refSumur.current.reset()
@@ -140,14 +140,14 @@ export const SearchPageScreen = ({ navigation }) => {
             />
           </ContainerField>
           <ContainerField>
-            <LabelStyle>Kelurahan</LabelStyle>
+            <LabelStyle>Urban Village</LabelStyle>
             <SelectDropdown
               ref={refKelurahan}
               data={optionKelurahan}
               buttonStyle={{
                 width: '100%'
               }}
-              defaultButtonText='Pilih Kelurahan'
+              defaultButtonText='Select Urban Village'
               buttonTextAfterSelection={(selectedItem) => {
                 return selectedItem.label
               }}
@@ -166,7 +166,7 @@ export const SearchPageScreen = ({ navigation }) => {
             />
           </ContainerField>
           <ContainerField>
-            <LabelStyle>Cari Sumur</LabelStyle>
+            <LabelStyle>Find Water Sources</LabelStyle>
             <SelectDropdown
               ref={refSumur}
               data={optionSumur}
@@ -179,7 +179,7 @@ export const SearchPageScreen = ({ navigation }) => {
                   id_sumur: selectedItem.value
                 })
               }}
-              defaultButtonText='Pilih Sumur'
+              defaultButtonText='Select Water Sources'
               buttonTextAfterSelection={(selectedItem) => {
                 return selectedItem.label
               }}
@@ -191,7 +191,7 @@ export const SearchPageScreen = ({ navigation }) => {
           <ContainerSelectButton>
             <SelectButton
               onPress={getInfo}
-            >Lihat Info</SelectButton>
+            >View Info</SelectButton>
           </ContainerSelectButton>
         </ContainerSearch>
       </MainContainer>
